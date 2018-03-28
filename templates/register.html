@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>register</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    </head>
+    <body>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+               <h2>{{message}}</h2>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        <div id="wrapper">
+            <form action="/regist" method="POST">
+
+                First name: <input type="text" name="first_name" id='first_name'>
+                Last name: <input type="text" name="last_name" id='last_name'>
+                Email: <input type="text" name="email" id='email'>
+                Password: <input type="password" name="password" id='password'>
+                comfirm Password: <input type="password" name="cpassword" id='password'>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
